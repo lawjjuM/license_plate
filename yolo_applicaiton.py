@@ -9,7 +9,7 @@ import os
 # Set the title of the Streamlit app
 st.title("YOLO Image and Video Processing")
 
-Allow users to upload images or videos
+#Allow users to upload images or videos
 uploaded_file = st.file_uploader("Upload an image or video", type=["jpg", "jpeg", "png", "bmp", "mp4", "avi", "mov", "mkv"])
 
 # Load YOLO model
