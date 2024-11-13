@@ -85,7 +85,7 @@ def predict_and_plot_video(video_path, output_path):
         out.release()
         return output_path
     except Exception as e:
-        st.error(f"Error processing video: {e}")
+       # st.error(f"Error processing video: {e}")
         return None
 
 def process_media(input_path, output_path):
