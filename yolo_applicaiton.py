@@ -1,5 +1,4 @@
-aimport streamlit as st
-
+import streamlit as st
 import cv2
 import numpy as np
 from ultralytics import YOLO
@@ -9,26 +8,26 @@ import os
 # Set the title of the Streamlit app
 st.title("YOLO Image and Video Processing")
 
-#Allow users to upload images or videos
+# Allow users to upload images or videos
 uploaded_file = st.file_uploader("Upload an image or video", type=["jpg", "jpeg", "png", "bmp", "mp4", "avi", "mov", "mkv"])
 
 # Load YOLO model
 try:
-    model = YOLO('best.pt')  # Replace with the path to your trained YOLO model
+    model = YOLO('/Users/A116351061/Documents/License_plate_detection/best.pt')  # Replace with the path to your trained YOLO model
 except Exception as e:
     st.error(f"Error loading YOLO model: {e}")
 
 def predict_and_save_image(path_test_car, output_image_path):
     """
-#     Predicts and saves the bounding boxes on the given test image using the trained YOLO model.
+    Predicts and saves the bounding boxes on the given test image using the trained YOLO model.
     
-#     Parameters:
-#     path_test_car (str): Path to the test image file.
-#     output_image_path (str): Path to save the output image file.
+    Parameters:
+    path_test_car (str): Path to the test image file.
+    output_image_path (str): Path to save the output image file.
 
-#     Returns:
-#     str: The path to the saved output image file.
-#     """
+    Returns:
+    str: The path to the saved output image file.
+    """
     try:
         results = model.predict(path_test_car, device='cpu')
         image = cv2.imread(path_test_car)
