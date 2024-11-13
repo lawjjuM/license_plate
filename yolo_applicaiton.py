@@ -1,4 +1,4 @@
-import streamlit as st
+aimport streamlit as st
 
 import cv2
 import numpy as np
@@ -14,7 +14,7 @@ uploaded_file = st.file_uploader("Upload an image or video", type=["jpg", "jpeg"
 
 # Load YOLO model
 try:
-    model = YOLO('data.pt')  # Replace with the path to your trained YOLO model
+    model = YOLO('best.pt')  # Replace with the path to your trained YOLO model
 except Exception as e:
     st.error(f"Error loading YOLO model: {e}")
 
