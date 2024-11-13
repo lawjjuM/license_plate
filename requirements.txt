@@ -5,3 +5,4 @@ opencv-python
 ultralytics
 opencv-python-headless
 dill
+cv2
